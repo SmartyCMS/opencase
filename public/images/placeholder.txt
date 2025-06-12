@@ -1,0 +1,23 @@
+# Image Placeholders
+
+This directory should contain the following images:
+
+## Required Images:
+- logo.png - Site logo
+- hero-bg.jpg - Hero section background image
+- bonus1.png - Bonus section image
+- giveaway1.png - Giveaway section image  
+- free-case.png - Free case image
+
+## Case Images:
+- cases/weapon_case.png
+- cases/bravo_case.png
+- cases/chroma_case.png
+
+## Additional Assets:
+You can add more images as needed for cases, items, and UI elements.
+
+For demo purposes, you can use placeholder images from services like:
+- https://picsum.photos/ for random images
+- https://via.placeholder.com/ for solid color placeholders
+- CS:GO community images for authentic case/weapon images

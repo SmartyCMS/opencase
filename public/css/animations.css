@@ -1,0 +1,340 @@
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(255, 107, 53, 0.6);
+    }
+}
+
+@keyframes rouletteSpin {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-2000px);
+    }
+}
+
+@keyframes itemReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) rotateY(90deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotateY(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotateY(0deg);
+    }
+}
+
+@keyframes upgradeSuccess {
+    0% {
+        transform: scale(1);
+        background: rgba(74, 222, 128, 0.1);
+    }
+    50% {
+        transform: scale(1.1);
+        background: rgba(74, 222, 128, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        background: rgba(74, 222, 128, 0.1);
+    }
+}
+
+@keyframes upgradeFail {
+    0% {
+        transform: scale(1);
+        background: rgba(239, 68, 68, 0.1);
+    }
+    50% {
+        transform: scale(1.1);
+        background: rgba(239, 68, 68, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        background: rgba(239, 68, 68, 0.1);
+    }
+}
+
+@keyframes coinFlip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.slide-in-right {
+    animation: slideInRight 0.6s ease-out;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+.glow {
+    animation: glow 2s infinite;
+}
+
+.roulette-spinning {
+    animation: rouletteSpin 3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.item-reveal {
+    animation: itemReveal 0.8s ease-out;
+}
+
+.upgrade-success {
+    animation: upgradeSuccess 0.6s ease-out;
+}
+
+.upgrade-fail {
+    animation: upgradeFail 0.6s ease-out;
+}
+
+.coin-flip {
+    animation: coinFlip 1s ease-in-out;
+}
+
+.sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+}
+
+/* Hover Animations */
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+}
+
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+}
+
+/* Rarity Glow Effects */
+.rarity-consumer.glow {
+    box-shadow: 0 0 20px rgba(176, 195, 217, 0.5);
+}
+
+.rarity-industrial.glow {
+    box-shadow: 0 0 20px rgba(94, 152, 217, 0.5);
+}
+
+.rarity-milspec.glow {
+    box-shadow: 0 0 20px rgba(75, 105, 255, 0.5);
+}
+
+.rarity-restricted.glow {
+    box-shadow: 0 0 20px rgba(136, 71, 255, 0.5);
+}
+
+.rarity-classified.glow {
+    box-shadow: 0 0 20px rgba(211, 44, 230, 0.5);
+}
+
+.rarity-covert.glow {
+    box-shadow: 0 0 20px rgba(235, 75, 75, 0.5);
+}
+
+.rarity-contraband.glow {
+    box-shadow: 0 0 20px rgba(228, 174, 57, 0.5);
+}
+
+/* Loading Animations */
+.loading-dots::after {
+    content: '';
+    animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+    0%, 20% {
+        content: '.';
+    }
+    40% {
+        content: '..';
+    }
+    60%, 100% {
+        content: '...';
+    }
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ff6b35;
+    animation: spin 1s ease-in-out infinite;
+}
+
+/* Particle Effects */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ff6b35;
+    border-radius: 50%;
+    animation: particleFloat 3s ease-in-out infinite;
+}
+
+@keyframes particleFloat {
+    0% {
+        opacity: 0;
+        transform: translateY(100px) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-50px) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-200px) scale(0);
+    }
+}
+
+/* Success/Error Animations */
+.success-flash {
+    animation: successFlash 0.6s ease-out;
+}
+
+.error-flash {
+    animation: errorFlash 0.6s ease-out;
+}
+
+@keyframes successFlash {
+    0% {
+        background: rgba(74, 222, 128, 0);
+    }
+    50% {
+        background: rgba(74, 222, 128, 0.3);
+    }
+    100% {
+        background: rgba(74, 222, 128, 0);
+    }
+}
+
+@keyframes errorFlash {
+    0% {
+        background: rgba(239, 68, 68, 0);
+    }
+    50% {
+        background: rgba(239, 68, 68, 0.3);
+    }
+    100% {
+        background: rgba(239, 68, 68, 0);
+    }
+}
+
+/* Stagger Animation */
+.stagger-animation > * {
+    opacity: 0;
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.stagger-animation > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-animation > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-animation > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-animation > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-animation > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-animation > *:nth-child(6) { animation-delay: 0.6s; }
+.stagger-animation > *:nth-child(7) { animation-delay: 0.7s; }
+.stagger-animation > *:nth-child(8) { animation-delay: 0.8s; }
+.stagger-animation > *:nth-child(9) { animation-delay: 0.9s; }
+.stagger-animation > *:nth-child(10) { animation-delay: 1.0s; }

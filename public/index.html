@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaseHunt - CS:GO Case Opening & Skin Upgrade</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="CaseHunt">
+                    <span>CaseHunt</span>
+                </div>
+                
+                <nav class="nav">
+                    <a href="#" class="nav-item active" data-page="cases">
+                        <i class="fas fa-box"></i>
+                        <span>Cases</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="upgrade">
+                        <i class="fas fa-arrow-up"></i>
+                        <span>Upgrade</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="inventory">
+                        <i class="fas fa-backpack"></i>
+                        <span>Inventory</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="contracts">
+                        <i class="fas fa-handshake"></i>
+                        <span>Contracts</span>
+                    </a>
+                    <a href="#" class="nav-item" data-page="csgo-live">
+                        <i class="fas fa-tv"></i>
+                        <span>CS:GO Live</span>
+                    </a>
+                </nav>
+                
+                <div class="header-right">
+                    <div class="online-counter">
+                        <i class="fas fa-users"></i>
+                        <span id="online-count">155</span>
+                        <span>Online</span>
+                    </div>
+                    
+                    <div class="user-section" id="user-section">
+                        <div class="auth-buttons" id="auth-buttons">
+                            <button class="btn btn-primary" id="login-btn">
+                                <i class="fab fa-steam"></i>
+                                Login
+                            </button>
+                        </div>
+                        
+                        <div class="user-info" id="user-info" style="display: none;">
+                            <div class="balance">
+                                <i class="fas fa-coins"></i>
+                                <span id="user-balance">$0.00</span>
+                            </div>
+                            <div class="user-avatar">
+                                <img id="user-avatar" src="" alt="User">
+                                <div class="user-dropdown">
+                                    <a href="#" id="profile-link">Profile</a>
+                                    <a href="#" id="logout-link">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background">
+                <img src="images/hero-bg.jpg" alt="Summer 2025">
+            </div>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>SUMMER 2025</h1>
+                    <p>New event</p>
+                    <button class="btn btn-hero">Open Event</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Feed -->
+        <section class="live-feed">
+            <div class="container">
+                <h2>Live Drops</h2>
+                <div class="live-feed-container" id="live-feed">
+                    <!-- Live feed items will be populated here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Page Content -->
+        <div class="container">
+            <!-- Cases Page -->
+            <div class="page-content" id="cases-page">
+                <div class="sidebar">
+                    <div class="sidebar-section">
+                        <h3>Bonuses</h3>
+                        <div class="bonus-item">
+                            <img src="images/bonus1.png" alt="Bonus">
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Giveaways</h3>
+                        <div class="giveaway-item">
+                            <img src="images/giveaway1.png" alt="Giveaway">
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-section">
+                        <h3>Free Cases</h3>
+                        <div class="free-case-item">
+                            <img src="images/free-case.png" alt="Free Case">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="main-content">
+                    <div class="cases-grid" id="cases-grid">
+                        <!-- Cases will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upgrade Page -->
+            <div class="page-content" id="upgrade-page" style="display: none;">
+                <div class="upgrade-container">
+                    <h2>Skin Upgrade</h2>
+                    <div class="upgrade-section">
+                        <div class="upgrade-from">
+                            <h3>From</h3>
+                            <div class="item-slot" id="upgrade-from-slot">
+                                <div class="slot-placeholder">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Select Item</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="upgrade-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div class="upgrade-to">
+                            <h3>To</h3>
+                            <div class="upgrade-targets" id="upgrade-targets">
+                                <!-- Upgrade targets will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="upgrade-controls">
+                        <button class="btn btn-primary" id="upgrade-btn" disabled>
+                            Upgrade
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Page -->
+            <div class="page-content" id="inventory-page" style="display: none;">
+                <div class="inventory-container">
+                    <h2>Your Inventory</h2>
+                    <div class="inventory-grid" id="inventory-grid">
+                        <!-- Inventory items will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Case Opening Modal -->
+    <div class="modal" id="case-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="case-modal-title">Case Opening</h3>
+                <button class="modal-close" id="case-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="case-roulette" id="case-roulette">
+                    <div class="roulette-container">
+                        <div class="roulette-items" id="roulette-items">
+                            <!-- Roulette items will be populated here -->
+                        </div>
+                        <div class="roulette-pointer"></div>
+                    </div>
+                </div>
+                <div class="case-controls">
+                    <button class="btn btn-primary" id="open-case-btn">
+                        Open Case
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="modal" id="result-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>You Won!</h3>
+                <button class="modal-close" id="result-modal-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="result-item" id="result-item">
+                    <!-- Result item will be populated here -->
+                </div>
+                <div class="result-controls">
+                    <button class="btn btn-secondary" id="sell-item-btn">
+                        Sell Item
+                    </button>
+                    <button class="btn btn-primary" id="keep-item-btn">
+                        Keep Item
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cases.js"></script>
+    <script src="js/upgrade.js"></script>
+    <script src="js/inventory.js"></script>
+    <script src="js/live-feed.js"></script>
+</body>
+</html>
